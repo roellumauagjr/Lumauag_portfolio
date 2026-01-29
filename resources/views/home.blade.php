@@ -3,7 +3,24 @@
 @section('title', 'Home')
 
 @section('content')
+<div class="container mt-4">
+    <h2> My Skills </h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($skills as $skill)
+                <tr>
+                    <td>{{$skill->name}}</td>
+                    <td>{{$skill->level}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
-<h1>Welcome to my Portfolio</h1>
-<p> This is for all the ladies, who don't get hype enough. Here then gone chameleon.</p>
 @endsection
