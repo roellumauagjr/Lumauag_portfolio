@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\HomeController;
+use App\http\Controllers\ExperienceController;
+use App\http\Controllers\ProjectController;
 use App\http\Controllers\SkillController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -9,14 +13,7 @@ use App\http\Controllers\SkillController;
 |
 */
 
-Route::get('/',[SkillController::class, 'index']);
-
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/projects', function () {
-    return view('projects');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/',[HomeController::class, 'index']);
+Route::get('/experiences',[ExperienceController::class, 'index']);
+Route::get('/projects',[ProjectController::class, 'index']);
+Route::get('/skills',[SkillController::class, 'index']);
