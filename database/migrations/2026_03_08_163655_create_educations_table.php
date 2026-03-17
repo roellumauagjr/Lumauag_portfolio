@@ -8,12 +8,12 @@ return new class extends Migration {
 
     public function up(): void
     {
-        Schema::create('experiences', function (Blueprint $table) {
+        Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['experience', 'education', 'certification'])->default('experience');
+            $table->enum('type', ['education', 'certification'])->default('education');
             $table->string('role');
             $table->string('organization');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('year');
             $table->timestamps();
         });
@@ -22,6 +22,6 @@ return new class extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('experiences');
+        Schema::dropIfExists('educations');
     }
 };

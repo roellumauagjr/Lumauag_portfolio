@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke(Request $request)
     {
         $projects = Project::where('is_published', true)->orderBy('order_column')->get();

@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class SkillsController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke(Request $request)
     {
         $skills = Skill::orderBy('order_column')->get();

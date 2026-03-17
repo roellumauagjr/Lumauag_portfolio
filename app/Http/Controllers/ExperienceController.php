@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class ExperienceController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
     public function __invoke(Request $request)
     {
         $experiences = Experience::where('type', 'experience')->orderBy('id', 'desc')->get();
